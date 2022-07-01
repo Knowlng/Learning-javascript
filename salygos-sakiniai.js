@@ -46,3 +46,131 @@ document.querySelector('#button3').addEventListener('click', function(){
 
     }
 });
+
+document.querySelector('#button4').addEventListener('click', function(){
+
+    let kampas1;
+    let kampas2;
+    let kampas3;
+    let kampuSuma;
+
+    kampas1 = parseFloat(document.querySelector('#kampas1').value) ;
+    kampas2 = parseFloat(document.querySelector('#kampas2').value) ;
+    kampas3 = parseFloat(document.querySelector('#kampas3').value) ;
+    kampuSuma = kampas1+kampas2+kampas3;
+
+    if(kampuSuma != 180) {
+       
+        document.querySelector('.trikampio-rezultatas').innerHTML = "ne, negalima";
+
+    } else if(kampas1 == kampas2 && kampas2 == kampas3) {
+
+        document.querySelector('.trikampio-rezultatas').innerHTML = "taip,galima trikampis lygiakraštis";
+
+    } else if(kampas1==kampas2 || kampas2==kampas3 || kampas1==kampas3) {
+
+        document.querySelector('.trikampio-rezultatas').innerHTML = "taip,galima trikampis lygiašonis";
+
+    } else {
+        document.querySelector('.trikampio-rezultatas').innerHTML ="taip,galima trikampis įvairiakraštis";
+    }
+
+});
+
+document.querySelector('#button4').addEventListener('click', function(){
+
+        let kampas1;
+        let kampas2;
+        let kampas3;
+        let kampuSuma;
+    
+        kampas1 = parseFloat(document.querySelector('#kampas1').value) ;
+        kampas2 = parseFloat(document.querySelector('#kampas2').value) ;
+        kampas3 = parseFloat(document.querySelector('#kampas3').value) ;
+        kampuSuma = kampas1+kampas2+kampas3;
+
+    if(kampuSuma != 180) {
+
+        document.querySelector('.trikampio-rezultatas1').innerHTML = "";
+
+    } else if(kampas1==90 || kampas2==90 || kampas3==90) {
+
+        document.querySelector('.trikampio-rezultatas1').innerHTML = "trikampis yra statusis";
+
+    } else if (179 > kampas1 && kampas1 > 90 || 179 > kampas2 && kampas2 > 90 || 179 > kampas3 && kampas3 > 90) {
+
+        document.querySelector('.trikampio-rezultatas1').innerHTML = "trikampis yra bukasis";
+
+    } else {
+
+        document.querySelector('.trikampio-rezultatas1').innerHTML = "trikampis yra smailusis";
+
+    }
+});
+
+document.querySelector('#button5').addEventListener('click', function(){
+
+    let krastine1;
+    let krastine2;
+    let krastine3;
+
+    krastine1 = parseFloat(document.querySelector('#krastine1').value) ;
+    krastine2 = parseFloat(document.querySelector('#krastine2').value) ;
+    krastine3 = parseFloat(document.querySelector('#krastine3').value) ;
+
+    if (krastine1==krastine2 && krastine2==krastine3) {
+
+        document.querySelector('.krastine-rezultatas').innerHTML = "taip, įmanoma trikampis lygiakraštis";
+    
+    } else if(krastine1==krastine2 && 2*krastine1-1>=krastine3>=1 || krastine2==krastine3 && 2*krastine2-1>=krastine1>=1 || krastine3==krastine1 && 2*krastine3-1>=krastine2>=1 ) {
+
+        document.querySelector('.krastine-rezultatas').innerHTML = "taip, įmanoma  trikampis lygiašonis";
+    }
+    else if (krastine1+krastine2 > krastine3 && krastine1+krastine3 > krastine2 && krastine2+krastine3 > krastine1) {
+
+        document.querySelector('.krastine-rezultatas').innerHTML = "taip, įmanoma trikampis įvairiakraštis";
+
+    } else {
+        document.querySelector('.krastine-rezultatas').innerHTML = "ne, trikampį sudaryt neįmanoma";
+    }
+});
+
+
+document.querySelector('#button5').addEventListener('click', function(){
+
+    let krastine1;
+    let krastine2;
+    let krastine3;
+
+    krastine1 = parseFloat(document.querySelector('#krastine1').value) ;
+    krastine2 = parseFloat(document.querySelector('#krastine2').value) ;
+    krastine3 = parseFloat(document.querySelector('#krastine3').value) ;
+
+    if(krastine1 >= krastine2 && krastine1 >= krastine3) {
+
+        if(krastine1*krastine1==krastine2*krastine2+krastine3*krastine3){
+
+            document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra statusis";
+
+        } else if (Math.cos((krastine2*krastine2+krastine3*krastine3)/2*krastine2*krastine3)>0 && -1>Math.cos((krastine2*krastine2+krastine3*krastine3)/2*krastine2*krastine3)) {
+
+            document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra bukasis";
+
+        } else {
+
+        }
+
+    }   else if (krastine2 >= krastine1 && krastine2 >= krastine3) {
+
+        if(krastine2*krastine2==krastine1*krastine1+krastine3*krastine3) {
+
+            document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra statusis";
+        }
+    }   else {
+
+        if(krastine3*krastine3==krastine2*krastine2+krastine1*krastine1) {
+
+            document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra statusis";
+        }
+    }
+});
