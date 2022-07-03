@@ -156,7 +156,7 @@ document.querySelector('#button5').addEventListener('click', function(){
 
                 document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra statusis";
             // cosinuso teorema ar trikampis bukas
-            } else if ((krastine2*krastine2+krastine3*krastine3-krastine1*krastine1)/(2*krastine2*krastine3)<=0 || -1<=(krastine2*krastine2+krastine3*krastine3-krastine1*krastine1)/(2*krastine2*krastine3)) {
+            } else if ((krastine2*krastine2+krastine3*krastine3-krastine1*krastine1)/(2*krastine2*krastine3)<0 && -1<(krastine2*krastine2+krastine3*krastine3-krastine1*krastine1)/(2*krastine2*krastine3)) {
 
                 document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra bukasis";
                 // jeigu niekas netinka, trikampis smailusis
@@ -172,7 +172,7 @@ document.querySelector('#button5').addEventListener('click', function(){
 
                 document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra statusis";
 
-            } else if ((krastine1*krastine1+krastine3*krastine3-krastine2*krastine2)/(2*krastine1*krastine3)<=0 || -1<=(krastine1*krastine1+krastine3*krastine3-krastine2*krastine2)/(2*krastine1*krastine3))
+            } else if ((krastine1*krastine1+krastine3*krastine3-krastine2*krastine2)/(2*krastine1*krastine3)<0 && -1<(krastine1*krastine1+krastine3*krastine3-krastine2*krastine2)/(2*krastine1*krastine3))
 
             document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra bukasis";
 
@@ -188,7 +188,7 @@ document.querySelector('#button5').addEventListener('click', function(){
 
                 document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra statusis";
 
-            } else if ((krastine2*krastine2+krastine1*krastine1-krastine3*krastine3)/(2*krastine2*krastine1)<=0 || -1<=(krastine2*krastine2+krastine1*krastine1-krastine3*krastine3)/(2*krastine2*krastine1)) {
+            } else if ((krastine2*krastine2+krastine1*krastine1-krastine3*krastine3)/(2*krastine2*krastine1)<0 && -1<(krastine2*krastine2+krastine1*krastine1-krastine3*krastine3)/(2*krastine2*krastine1)) {
 
                 document.querySelector('.krastine-rezultatas1').innerHTML = "trikampis yra bukasis";
         
@@ -321,9 +321,6 @@ document.querySelector('#button5').addEventListener('click', function(){
 // });
 
 
-
-
-
 // document.querySelector('#button6').addEventListener('click', function(){
 
 //     let x;
@@ -332,15 +329,9 @@ document.querySelector('#button5').addEventListener('click', function(){
 //     let x2;
 //     let y2;
 //     let z2;
-
-//     let skaitiklis;
-//     let skaitiklis2;
-//     let skaitiklis3;
 //     let xats;
 //     let yats;
 //     let zats;
-
-//     let ats;
 
 //     x = parseFloat(document.querySelector('#x').value) ;
 //     y = parseFloat(document.querySelector('#y').value) ;
@@ -349,10 +340,18 @@ document.querySelector('#button5').addEventListener('click', function(){
 //     y2 = parseFloat(document.querySelector('#y2').value) ;
 //     z2 = parseFloat(document.querySelector('#z2').value) ;
 
-//     ats=math.add(math.fraction(y/z), math.fraction(y2/z2));
-//     console.log(ats); 
+//     if(z==0 || z2==0) {
+//         // ar trupmena egzistuoja
+//         document.getElementsByName('x-ats')[0].placeholder = "trupmena neegzistuoja";
+//         document.getElementsByName('y-ats')[0].placeholder = "trupmena neegzistuoja";
+//         document.getElementsByName('z-ats')[0].placeholder = "trupmena neegzistuoja";
+//     } else if() {
+
+       
+//         }
+//     }
+
+
+
 // });
-
-
-
 
