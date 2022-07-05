@@ -9,7 +9,7 @@ document.querySelector('#button2').addEventListener('click', function(){
     skaicius02 = parseFloat(document.querySelector('#skaicius02').value) ;
 
     if(skaicius01 > skaicius02) {
-       
+        //    galima naudoti .value kad pakeist inputo reiksme, vietoj placeholder
         document.getElementsByName('rezultatas02')[0].placeholder = skaicius01;
 
     }   else if (skaicius01 == skaicius02) {
@@ -33,7 +33,7 @@ document.querySelector('#button3').addEventListener('click', function(){
     skaicius003 = parseFloat(document.querySelector('#skaicius003').value) ;
 
     if(skaicius001 >= skaicius002 && skaicius001 >= skaicius003) {
-       
+
         document.getElementsByName('rezultatas003')[0].placeholder = skaicius001;
 
     }   else if (skaicius002 >= skaicius001 && skaicius002 >= skaicius003) {
@@ -206,152 +206,66 @@ document.querySelector('#button5').addEventListener('click', function(){
 });
 
 
-// document.querySelector('#button6').addEventListener('click', function(){
+document.querySelector('#button6').addEventListener('click', function(){
 
-//     let x;
-//     let y;
-//     let z;
-//     let x2;
-//     let y2;
-//     let z2;
+    let x;
+    let y;
+    let z;
+    let x2;
+    let y2;
+    let z2;
 
-//     let skaitiklis;
-//     let skaitiklis2;
-//     let skaitiklis3;
-//     let xats;
-//     let yats;
-//     let zats;
+    let xats;
+    let yats;
+    let zats;
+    let skaitiklis1;
+    let vardiklis1;
+    let skaitiklis2;
+    let vardiklis2;
 
-//     x = parseFloat(document.querySelector('#x').value) ;
-//     y = parseFloat(document.querySelector('#y').value) ;
-//     z = parseFloat(document.querySelector('#z').value) ;
-//     x2 = parseFloat(document.querySelector('#x2').value) ;
-//     y2 = parseFloat(document.querySelector('#y2').value) ;
-//     z2 = parseFloat(document.querySelector('#z2').value) ;
+    x = parseFloat(document.querySelector('#x').value) ;
+    y = parseFloat(document.querySelector('#y').value) ;
+    z = parseFloat(document.querySelector('#z').value) ;
+    x2 = parseFloat(document.querySelector('#x2').value) ;
+    y2 = parseFloat(document.querySelector('#y2').value) ;
+    z2 = parseFloat(document.querySelector('#z2').value) ;
 
+    // pasiverciam i netaisiklingasisas
+    skaitiklis1 = x * z + y;
+    vardiklis1=z;
+    skaitiklis2 = x2 * z2 + y2;
+    vardiklis2=z2;
+    
+    // bendravardiklinimas
+    skaitiklis1=skaitiklis1*vardiklis2;
+    skaitiklis2=skaitiklis2*vardiklis1;
 
-//     if (z==0 || z2==0) {
-//         // vardiklis nelygys nuliui
-//         document.getElementsByName('x-ats')[0].placeholder = "trupmena neegziztuoja";
-//         document.getElementsByName('y-ats')[0].placeholder = "trupmena neegziztuoja";
-//         document.getElementsByName('z-ats')[0].placeholder = "trupmena neegziztuoja";
-//         // issikeliam minusus
-//     } else if{
+    vardiklis1=vardiklis1*vardiklis2;
+    vardiklis2=vardiklis1;
 
+    // sudetis
+    let sudetasVardiklis, sudetasSkaitiklis;
 
-
-
-//     } else if (z!=z2) {
-
-//         (x*z+y)*z2==skaitiklis;
-//         (x2*z2+y2)*z==skaitiklis2;
-//         z*z2==zats;
-
-//         skaitiklis+skaitiklis2==skaitiklis3;
-//         skaitiklis3 % zats==yats;
-//         xats==Math.trunc(skaitiklis3/zats);
+    sudetasSkaitiklis=skaitiklis1+skaitiklis2;
+    sudetasVardiklis=vardiklis2;
 
 
+    // sveikos dalies iskyrimas
+    let SveikojiDalis
 
+    SveikojiDalis=parseInt(sudetasSkaitiklis/sudetasVardiklis);
+    sudetasSkaitiklis=sudetasSkaitiklis - SveikojiDalis * sudetasVardiklis;
 
-//     } else {
+    if(sudetasSkaitiklis==0) {
+        document.getElementsByName('x-ats')[0].placeholder = SveikojiDalis;
+        document.getElementsByName('y-ats')[0].placeholder = "";
+        document.getElementsByName('z-ats')[0].placeholder = "";
+    } else {
 
-//     }
+        document.getElementsByName('x-ats')[0].placeholder = SveikojiDalis;
+        document.getElementsByName('y-ats')[0].placeholder = sudetasSkaitiklis;
+        document.getElementsByName('z-ats')[0].placeholder = sudetasVardiklis;
+    }
+});
 
-
-// });
-
-
-
-// document.querySelector('#button6').addEventListener('click', function(){
-
-//     let x;
-//     let y;
-//     let z;
-//     let x2;
-//     let y2;
-//     let z2;
-
-//     let skaitiklis;
-//     let skaitiklis2;
-//     let skaitiklis3;
-//     let xats;
-//     let yats;
-//     let zats;
-
-//     let ats;
-
-//     x = parseFloat(document.querySelector('#x').value) ;
-//     y = parseFloat(document.querySelector('#y').value) ;
-//     z = parseFloat(document.querySelector('#z').value) ;
-//     x2 = parseFloat(document.querySelector('#x2').value) ;
-//     y2 = parseFloat(document.querySelector('#y2').value) ;
-//     z2 = parseFloat(document.querySelector('#z2').value) ;
-
-
-
-//     if (z==0 || z2==0) {
-//         // vardiklis nelygys nuliui
-//         document.getElementsByName('x-ats')[0].placeholder = "trupmena neegziztuoja";
-//         document.getElementsByName('y-ats')[0].placeholder = "trupmena neegziztuoja";
-//         document.getElementsByName('z-ats')[0].placeholder = "trupmena neegziztuoja";
-//     } else if(x>0 && x2<0) {
-//         x=x*-1;
-//         skaitiklis=(x*z+y)*-1;
-//         vardiklis=z;
-//         ats=math.fraction(skaitiklis/vardiklis);
-
-
-//     } else
-
-//     skaitiklis=(x*z+y)*z2;
-//     skaitiklis2=(x2*z2+y2)*z;
-//     zats=z*z2;
-
-//     skaitiklis3=skaitiklis+skaitiklis2;
-//     yats=skaitiklis3 % zats;
-//     xats=Math.trunc(skaitiklis3/zats);
-
-
-
-//     console.log(xats);
-//     console.log(yats);
-//     console.log(zats);
-
-// });
-
-
-// document.querySelector('#button6').addEventListener('click', function(){
-
-//     let x;
-//     let y;
-//     let z;
-//     let x2;
-//     let y2;
-//     let z2;
-//     let xats;
-//     let yats;
-//     let zats;
-
-//     x = parseFloat(document.querySelector('#x').value) ;
-//     y = parseFloat(document.querySelector('#y').value) ;
-//     z = parseFloat(document.querySelector('#z').value) ;
-//     x2 = parseFloat(document.querySelector('#x2').value) ;
-//     y2 = parseFloat(document.querySelector('#y2').value) ;
-//     z2 = parseFloat(document.querySelector('#z2').value) ;
-
-//     if(z==0 || z2==0) {
-//         // ar trupmena egzistuoja
-//         document.getElementsByName('x-ats')[0].placeholder = "trupmena neegzistuoja";
-//         document.getElementsByName('y-ats')[0].placeholder = "trupmena neegzistuoja";
-//         document.getElementsByName('z-ats')[0].placeholder = "trupmena neegzistuoja";
-//     } else if() {
-
-       
-//         }
-//     }
-
-
-
-// });
 
